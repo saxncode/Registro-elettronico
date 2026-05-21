@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="it"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;DanceSchool Presence&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="manifest" href="manifest.json"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="theme-color" content="#4F46E5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="apple-touch-icon" href="https://via.placeholder.com/192"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-50 text-gray-900 font-sans antialiased inside-v"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav id="navbar" class="hidden bg-indigo-600 text-white shadow-md px-4 py-3 justify-between items-center fixed top-0 left-0 right-0 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center space-x-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-xl font-bold tracking-wider"&gt;💃 DanceFlow&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span id="user-badge" class="text-xs bg-indigo-500 px-2 py-1 rounded-full border border-indigo-400"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button onclick="logout()" class="bg-indigo-700 hover:bg-indigo-800 text-xs px-3 py-1.5 rounded-lg transition font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Logout</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="container mx-auto px-4 pt-20 pb-8 max-w-md md:max-w-4xl"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="view-login" class="mt-10 bg-white p-6 rounded-2xl shadow-xl max-w-sm mx-auto border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-4xl"&gt;🩰&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-2xl font-bold text-gray-800 mt-2"&gt;Scuola di Danza&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500"&gt;Gestione Presenze &amp; Corsi&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form onsubmit="handleLogin(event)" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1"&gt;Username&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="username" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="admin o insegnante"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="block text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1"&gt;Password&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="password" id="password" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="••••••••"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-xs text-gray-400 bg-gray-50 p-2.5 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>💡 &lt;strong&gt;Demo info:&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>• Segreteria: &lt;code&gt;admin&lt;/code&gt; / &lt;code&gt;admin&lt;/code&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>• Insegnante: &lt;code&gt;teacher&lt;/code&gt; / &lt;code&gt;teacher&lt;/code&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl transition shadow-lg shadow-indigo-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Accedi</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="view-admin" class="hidden space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-xl font-bold text-gray-800"&gt;Pannello Segreteria&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs text-gray-500"&gt;Configura corsi, allievi e controlla i report.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-gray-700 mb-3 flex items-center"&gt;➕ Aggiungi Corso&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form onsubmit="addCourse(event)" class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" id="new-course-name" required placeholder="Es. Hip Hop Avanzato" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:outline-indigo-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="w-full bg-emerald-600 text-white text-sm font-semibold py-2 rounded-xl"&gt;Salva Corso&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-gray-700 mb-3"&gt;➕ Nuovo Allievo&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form onsubmit="addStudent(event)" class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" id="new-student-name" required placeholder="Nome e Cognome" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:outline-indigo-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="w-full bg-emerald-600 text-white text-sm font-semibold py-2 rounded-xl"&gt;Iscrivi Allievo&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="font-bold text-gray-700 mb-3"&gt;🔗 Associa Allievo a Corso&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;form onsubmit="enrollStudent(event)" class="grid grid-cols-1 md:grid-cols-3 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="enroll-student-select" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm"&gt;&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="enroll-course-select" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm"&gt;&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button type="submit" class="bg-indigo-600 text-white text-sm font-semibold py-2 rounded-xl"&gt;Associa&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="font-bold text-gray-700 mb-3"&gt;📊 Registro Presenze Storico&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;table class="w-full text-left text-sm text-gray-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;thead class="bg-gray-50 text-xs text-gray-700 uppercase"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="p-3"&gt;Data&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="p-3"&gt;Corso&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="p-3"&gt;Allievo&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="p-3"&gt;Stato&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tbody id="global-report-table" class="divide-y divide-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="view-teacher" class="hidden space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-xl font-bold text-gray-800"&gt;Registro Appello&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-xs font-semibold text-gray-500 uppercase mb-1"&gt;Seleziona Corso&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;select id="teacher-course-select" onchange="loadTeacherClasslist()" class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:outline-indigo-500 text-sm"&gt;&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-xs font-semibold text-gray-500 uppercase mb-1"&gt;Data Giorno&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="date" id="teacher-date-select" onchange="loadTeacherClasslist()" class="w-full px-3 py-2.5 rounded-xl border border-gray-300 focus:outline-indigo-500 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-gray-700"&gt;Elenco Allievi&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="attendance-counter" class="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="teacher-classlist" class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="saveAttendance()" class="w-full mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>💾 Salva Presenze Nel Database</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- DATABASE INIZIALE (LOCAL STORAGE) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let db = JSON.parse(localStorage.getItem('danceflow_db')) || {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>courses: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ id: 1, name: "Danza Classica Principianti" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ id: 2, name: "Hip Hop Avanzato" }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>students: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ id: 1, name: "Sofia Rossi" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ id: 2, name: "Marco Bianchi" },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ id: 3, name: "Giulia Verdi" }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>enrollments: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ studentId: 1, courseId: 1 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ studentId: 2, courseId: 1 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ studentId: 3, courseId: 2 }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>attendance: [] // Struttura: { date: 'YYYY-MM-DD', courseId: X, studentId: Y, status: 'Presente/Assente/Giustificato' }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveDB() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('danceflow_db', JSON.stringify(db));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentUser = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentAttendanceState = {}; // Stato temporaneo della schermata appello corrente</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- SISTEMA DI AUTENTICAZIONE ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function handleLogin(event) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>event.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const user = document.getElementById('username').value.trim();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (user === 'admin') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentUser = { name: 'Segreteria', role: 'admin' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (user === 'teacher') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentUser = { name: 'Insegnante M.', role: 'teacher' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Utente non riconosciuto. Usa "admin" o "teacher".');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>initSession();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initSession() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('view-login').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('navbar').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('navbar').classList.add('flex');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('user-badge').innerText = currentUser.name;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (currentUser.role === 'admin') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('view-admin').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>refreshAdminDropdowns();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderGlobalReport();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (currentUser.role === 'teacher') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('view-teacher').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('teacher-date-select').value = new Date().toISOString().split('T')[0];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>refreshTeacherCourses();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>loadTeacherClasslist();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function logout() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentUser = null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('view-admin').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('view-teacher').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('navbar').classList.remove('flex');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('navbar').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('view-login').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('username').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('password').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FUNZIONALITÀ SEGRETERIA (ADMIN) ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function refreshAdminDropdowns() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sSelect = document.getElementById('enroll-student-select');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const cSelect = document.getElementById('enroll-course-select');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>sSelect.innerHTML = db.students.map(s =&gt; `&lt;option value="${s.id}"&gt;${s.name}&lt;/option&gt;`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cSelect.innerHTML = db.courses.map(c =&gt; `&lt;option value="${c.id}"&gt;${c.name}&lt;/option&gt;`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function addCourse(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('new-course-name').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const id = Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>db.courses.push({ id, name });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveDB();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('new-course-name').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>refreshAdminDropdowns();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Corso inserito con successo!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function addStudent(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const name = document.getElementById('new-student-name').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const id = Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>db.students.push({ id, name });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveDB();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('new-student-name').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>refreshAdminDropdowns();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Allievo iscritto all\'anagrafica!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function enrollStudent(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const studentId = parseInt(document.getElementById('enroll-student-select').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const courseId = parseInt(document.getElementById('enroll-course-select').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Evita duplicati di iscrizione</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const exists = db.enrollments.some(en =&gt; en.studentId === studentId &amp;&amp; en.courseId === courseId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(exists) return alert('L\'allievo è già associato a questo corso.');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>db.enrollments.push({ studentId, courseId });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveDB();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Associazione completata!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderGlobalReport() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const tbody = document.getElementById('global-report-table');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (db.attendance.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>tbody.innerHTML = `&lt;tr&gt;&lt;td colspan="4" class="p-4 text-center text-xs text-gray-400"&gt;Nessun dato di presenza registrato.&lt;/td&gt;&lt;/tr&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Ordina per data decrescente</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sortedAttendance = [...db.attendance].sort((a,b) =&gt; b.date.localeCompare(a.date));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>tbody.innerHTML = sortedAttendance.map(att =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const course = db.courses.find(c =&gt; c.id === att.courseId)?.name || 'N/D';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const student = db.students.find(s =&gt; s.id === att.studentId)?.name || 'N/D';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let badgeColor = 'bg-gray-100 text-gray-800';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(att.status === 'Presente') badgeColor = 'bg-green-100 text-green-800';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(att.status === 'Assente') badgeColor = 'bg-red-100 text-red-800';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(att.status === 'Giustificato') badgeColor = 'bg-yellow-100 text-yellow-800';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr class="hover:bg-gray-50 text-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3 font-medium"&gt;${att.date}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3"&gt;${course}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3"&gt;${student}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="p-3"&gt;&lt;span class="px-2 py-0.5 rounded-full font-semibold ${badgeColor}"&gt;${att.status}&lt;/span&gt;&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- FUNZIONALITÀ INSEGNANTE ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function refreshTeacherCourses() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const select = document.getElementById('teacher-course-select');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>select.innerHTML = db.courses.map(c =&gt; `&lt;option value="${c.id}"&gt;${c.name}&lt;/option&gt;`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadTeacherClasslist() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const courseId = parseInt(document.getElementById('teacher-course-select').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const date = document.getElementById('teacher-date-select').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('teacher-classlist');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(!courseId || !date) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Trova allievi iscritti a questo corso</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const enrolledIds = db.enrollments.filter(e =&gt; e.courseId === courseId).map(e =&gt; e.studentId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const classlist = db.students.filter(s =&gt; enrolledIds.includes(s.id));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Resetta lo stato temporaneo della UI</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentAttendanceState = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(classlist.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.innerHTML = `&lt;p class="text-sm text-center py-6 text-gray-400"&gt;Nessun allievo iscritto a questo corso.&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('attendance-counter').innerText = `0 allievi`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('attendance-counter').innerText = `${classlist.length} allievi iscritti`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Carica lo stato preesistente nel DB per quel giorno/corso se presente</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = classlist.map(student =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const existing = db.attendance.find(a =&gt; a.date === date &amp;&amp; a.courseId === courseId &amp;&amp; a.studentId === student.id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentStatus = existing ? existing.status : 'Assente'; // Di default consideriamo assente non marcato</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentAttendanceState[student.id] = currentStatus;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return generateStudentRowHTML(student.id, student.name, currentStatus);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function generateStudentRowHTML(id, name, status) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-gray-50 border border-gray-100 rounded-xl space-y-2 sm:space-y-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="font-medium text-sm text-gray-800"&gt;${name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex space-x-1.5 justify-end"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button onclick="setStudentStatus(${id}, 'Presente')" id="btn-${id}-Presente" class="status-btn text-xs px-2.5 py-1.5 rounded-lg border font-semibold transition ${status === 'Presente' ? 'bg-green-600 text-white border-green-600' : 'bg-white text-gray-600 border-gray-200'}"&gt;P&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button onclick="setStudentStatus(${id}, 'Assente')" id="btn-${id}-Assente" class="status-btn text-xs px-2.5 py-1.5 rounded-lg border font-semibold transition ${status === 'Assente' ? 'bg-red-600 text-white border-red-600' : 'bg-white text-gray-600 border-gray-200'}"&gt;A&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button onclick="setStudentStatus(${id}, 'Giustificato')" id="btn-${id}-Giustificato" class="status-btn text-xs px-2.5 py-1.5 rounded-lg border font-semibold transition ${status === 'Giustificato' ? 'bg-yellow-500 text-white border-yellow-500' : 'bg-white text-gray-600 border-gray-200'}"&gt;G&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function setStudentStatus(studentId, status) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentAttendanceState[studentId] = status;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Aggiorna visivamente i bottoni per quel singolo allievo</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const types = ['Presente', 'Assente', 'Giustificato'];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>types.forEach(t =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btn = document.getElementById(`btn-${studentId}-${t}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (t === status) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let activeClasses = t === 'Presente' ? 'bg-green-600 text-white border-green-600' : t === 'Assente' ? 'bg-red-600 text-white border-red-600' : 'bg-yellow-500 text-white border-yellow-500';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.className = `status-btn text-xs px-2.5 py-1.5 rounded-lg border font-semibold transition ${activeClasses}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.className = `status-btn text-xs px-2.5 py-1.5 rounded-lg border font-semibold transition bg-white text-gray-600 border-gray-200`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveAttendance() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const courseId = parseInt(document.getElementById('teacher-course-select').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const date = document.getElementById('teacher-date-select').value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Rimuovi vecchi record sovrapponibili prima di salvare i nuovi per evitare duplicati</p>
+<p class="p1"><span class="Apple-converted-space">            </span>db.attendance = db.attendance.filter(a =&gt; !(a.date === date &amp;&amp; a.courseId === courseId));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Push del nuovo stato attuale</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let studentId in currentAttendanceState) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>db.attendance.push({</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: date,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>courseId: courseId,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>studentId: parseInt(studentId),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>status: currentAttendanceState[studentId]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>saveDB();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Presenze salvate correttamente nel registro!');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- REGISTRAZIONE SERVICE WORKER PER PWA ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if ('serviceWorker' in navigator) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.addEventListener('load', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>navigator.serviceWorker.register('sw.js')</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.then(reg =&gt; console.log('Service Worker Registrato con successo!', reg.scope))</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>.catch(err =&gt; console.log('Errore registrazione Service Worker:', err));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
